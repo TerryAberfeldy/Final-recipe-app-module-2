@@ -28,9 +28,15 @@ struct RecipeDetailView: View {
                 Text("Ingredients")
                     .font(.headline)
                     .padding(.vertical, 5.0)
-                ForEach(recipe.ingredients, id:\.self){item in
-                    Text("*   " + item)
-            
+
+                //                Was
+//                ForEach(recipe.ingredients, id:\.self){item in
+//                    Text("*   " + item)
+                
+                // Changed to -- no longer eed the id paramenter because ingredients is an identifiable object
+                   
+                ForEach(recipe.ingredients){item in
+                        Text("*   " + item.name)
                 }
             }
             .padding(.horizontal)
